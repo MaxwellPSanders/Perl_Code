@@ -1,0 +1,11 @@
+#maxwell sanders
+#6/21/17
+#This takes two inputs on two separate lines and multiplies them
+#input1: 2
+#input2: 3
+#6
+
+chomp($num1 = <STDIN>); #grabs the first number
+chomp($num2 = <STDIN>); #grabs the second number
+
+print $num1 * $num2, " \n"; #prints the string created through multiplication

@@ -1,0 +1,14 @@
+#maxwell sanders
+#6/21/17
+#This takes two inputs on two separate lines
+#The first line is the input it will spam
+#The second line is how many times it will spam that input across multiple lines
+#ex: fail 3
+#fail
+#fail
+#fail
+
+$line = <STDIN>; #grabs the line newspace and all
+chomp($mult = <STDIN>); #grabs the number
+
+print $line x $mult; #prints the string created through multiplication
