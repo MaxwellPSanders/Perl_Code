@@ -1,0 +1,19 @@
+
+#maxwell sanders
+#6/22/17
+#Takes user input until end of file is called and then reverses the lines of input
+#ex.
+#line1
+#line2
+#line3
+#end of file called
+#prints:
+#line3
+#line2
+#line1
+
+#!/usr/bin/perl
+
+@lines = <>; #grabs the lines
+
+print "\n\n", reverse(@lines) ; #prints the string created through multiplication

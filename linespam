@@ -8,6 +8,8 @@
 #fail
 #fail
 
+#!/usr/bin/perl
+
 $line = <STDIN>; #grabs the line newspace and all
 chomp($mult = <STDIN>); #grabs the number
 
