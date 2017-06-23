@@ -1,0 +1,13 @@
+#maxwell sanders
+#6/23/17
+#this program takes multiple files and displays them starting from the last file entered
+#ex. perl backcat f1 f2 f3
+#displays f3
+#displays f2
+#displays f1
+
+#reverse the input filenames
+@ARGV = reverse @ARGV;
+
+#diamond operator swoops in for the kill
+print <>;

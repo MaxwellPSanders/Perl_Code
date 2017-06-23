@@ -2,4 +2,6 @@
 #6/21/17
 #The point of this program is to dip my toes into the water of Perl
 
-print "Hello World!\n";#Maxwell Sanders
+#!/usr/bin/env perl
+
+print "Hello World!\n"; #Maxwell Sanders
