@@ -1,0 +1,18 @@
+#Maxwell Sanders
+#6/23/17
+#this program will ask for a name and give back the last name if it is in the hash table
+
+
+$lastnames{"bob"}= "clinton";
+$lastnames{"fob"}= "crinton";
+$lastnames{"tob"}= "chinton";
+$lastnames{"gob"}= "cwinton";
+$lastnames{"job"}= "clininton";
+$lastnames{"lob"}= "covington";
+
+#just keep asking until the user decides to quit
+while(1){
+    print "What is the first name: ";
+    chomp($name = <STDIN>);
+    print "Full Name is: $name ", $lastnames{$name}, "\n";
+}
