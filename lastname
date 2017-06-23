@@ -2,7 +2,7 @@
 #6/23/17
 #this program will ask for a name and give back the last name if it is in the hash table
 
-
+#hardcode some values into this hash table
 $lastnames{"bob"}= "clinton";
 $lastnames{"fob"}= "crinton";
 $lastnames{"tob"}= "chinton";

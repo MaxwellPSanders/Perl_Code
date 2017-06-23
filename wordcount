@@ -1,0 +1,26 @@
+#Maxwell Sanders
+#6/23/17
+#This program will keep taking inputs and then say how many times those inputs happened
+
+print "Keep typing words or phrases separated by lines and then hit CTRL-d to see how many times things re-occurred\n";
+
+#get all of the input
+chomp(@stuff = <STDIN>);
+
+#go through each word and then update the hash table
+foreach $word (@stuff){
+    if(!$counts{$word}){
+        $counts{$word} = 1;
+    }
+    else{
+        $counts{$word} ++;
+    }
+}
+
+#put every thing into a list
+while( ($key, $value) = each %counts){
+    push @output, "$key - $value\n";
+}
+
+#print the sorted list
+print "\nHere are the counts:\n", sort @output;
