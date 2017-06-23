@@ -1,0 +1,34 @@
+#maxwell sanders
+#6/22/17
+#take a list of numbers and return the ones that are above average
+
+#takes the average of a list
+sub average{
+    my $avg = 0; 
+
+    #go through each value and add them, then divide by the length
+    foreach $num (@_){
+        $avg += $num;
+    }
+    $avg /= scalar @_;
+
+    return $avg;
+}
+
+#returns all the values of a list that are abovee average
+sub above{
+    my @greater; #array to hold the greater values
+    my $avg = average(@_); #the average value
+
+    #go through each value and compare
+    foreach $num (@_){
+        if($num > $avg){
+            push @greater, $num;
+        }
+    }
+
+    return @greater;
+}
+
+@best = above(1..100);
+print "@best\n";

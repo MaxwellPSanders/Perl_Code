@@ -1,0 +1,16 @@
+#maxwell sanders
+#6/22/17
+#This will take a list of numbers and add all of them up
+
+sub total(@numbers){
+    my $sum = 0; #this is the value we will return
+    #go through the number list and add them to sum
+    foreach $num (@_){
+        $sum += $num;
+    }
+    return $sum;
+}
+
+@nums = (1..10000000);
+$nums_tot = total(@nums);
+print "The total is $nums_tot\n";
