@@ -1,0 +1,14 @@
+#maxwell sanders
+#6/22/17
+#this program will take numbers from the user and print names associated with them
+
+print "Keep typing numbers 0-4. Hit ctrl-D to exit.\n";
+chomp(@nums = <STDIN>); #holds all of the user input
+@names = qw(dan phan shannon tanner jack); #holds the 5 names that are usable
+
+#go through all of the numbers input
+foreach $num (@nums){
+    print "@names[$num] ";
+}
+
+print "\n";
