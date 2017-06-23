@@ -1,0 +1,23 @@
+
+#Maxwell Sanders
+#6/23/17
+#This takes in multiple lines of input and prints it out at the end formatted
+#to a nice user defined character right justification
+
+#get the justification
+print "Enter right justification length: ";
+chomp($length = <STDIN>);
+
+#notify the user what we are doing
+print "Keep typing lines of text and hit CTRL-D to stop.\n";
+
+#take all the input and store it into a list
+chomp(@text = <STDIN>);
+
+#print a reference string 
+print "0123456789" x ($length/10 + 3), "\n";
+
+#format print every line
+foreach $line (@text){
+    printf "%${length}s\n" , $line;
+}
