@@ -1,0 +1,18 @@
+#Maxwell Sanders
+#6/23/17
+#This takes in multiple lines of input and prints it out at the end formatted
+#to a nice 20 character right justification
+
+#notify the user what we are doing
+print "Keep typing lines of text and hit CTRL-D to stop.\n";
+
+#take all the input and store it into a list
+chomp(@text = <stdin>);
+
+#print a reference string 
+print "0123456789" x 4, "\n";
+
+#format print every line
+foreach $line (@text){
+    printf "%20s\n" , $line;
+}
