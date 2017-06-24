@@ -1,0 +1,18 @@
+
+#maxwell sanders
+#6/24/17
+#this program has the simple job of finding fred
+#updated to allow you to find Fred as well
+
+#open the test file, grab everything and close it
+open TEST, "regtest.txt";
+chomp(@lines = <TEST>);
+close TEST;
+
+#go through each line and test
+foreach (@lines){
+    #check to find fred
+    if(/[Ff]red/){
+        print $_, "\n";
+    }
+}

@@ -1,0 +1,17 @@
+#maxwell sanders
+#6/24/17
+#this program tries to find words that contains a capitalized letter but
+#not all capitalized
+
+#open the test file, grab everything and close it
+open TEST, "regtest.txt";
+chomp(@lines = <TEST>);
+close TEST;
+
+#go through each line and test
+foreach (@lines){
+    #check to find one capital and at least one non capital
+    if(/([A-Z][a-z]+|[a-z]+[A-Z])/){
+        print $_, "\n";
+    }
+}

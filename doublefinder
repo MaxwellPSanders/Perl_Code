@@ -1,0 +1,16 @@
+#maxwell sanders
+#6/24/17
+#this program is trying to find words that have double letters
+
+#open the test file, grab everything and close it
+open TEST, "regtest.txt";
+chomp(@lines = <TEST>);
+close TEST;
+
+#go through each line and test
+foreach (@lines){
+    #check to find fred
+    if(/([A-Za-z])\1/){
+        print $_, "\n";
+    }
+}
