@@ -1,0 +1,18 @@
+#Maxwell Sanders
+#6/27/17
+#This program is just cd coupled with an ls
+
+#change directory
+if(!@ARGV){
+    chdir;
+}
+else{
+    chdir @ARGV[0] or die "Can't move to directory!\n"
+}
+
+#read everything in the directory
+sort(@lines = glob "*");
+foreach (@lines){
+    next if $_ =~ "/^\./";
+    print "$_\n";
+}
