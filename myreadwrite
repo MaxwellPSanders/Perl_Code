@@ -1,0 +1,19 @@
+#Maxwell Sanders
+#6/27/17
+#This program goes through the input files and says which ones
+#are owned by me, readable, and writeable
+
+#check to see that there is input
+if(!@ARGV){
+    print "There are no files input!\n";
+    exit();
+}
+
+print "Files owned by me, readable, and writeable:\n";
+#goes through all of the files input
+foreach (@ARGV){
+    if(-o -r -w){
+        print "$_\n";
+    }
+}
+

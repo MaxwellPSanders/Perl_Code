@@ -1,0 +1,19 @@
+#maxwell sanders
+#6/27/17
+#This program checks to see what the oldest file input is
+
+#check to see that there is input
+if(!@ARGV){
+    print "There are no files input!\n";
+    exit();
+}
+
+$oldname = @ARGV[0];
+$oldest = -M @ARGV[0];
+#goes through all of the files input
+foreach (@ARGV){
+    $current = -M;
+    $oldname = $_ if $current > $oldest;
+}
+
+print "$oldname is the oldest file.\n";
