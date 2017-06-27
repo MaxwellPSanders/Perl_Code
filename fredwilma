@@ -1,0 +1,24 @@
+#maxwell sanders
+#6/26/17
+#this program changes all freds to wilma
+#changes all wilma to fred
+
+#open the test file, grab everything and close it
+open TEST, $ARGV[0];
+chomp(@lines = <TEST>);
+close TEST;
+
+#open the outputfile
+open OUT, ">", "${ARGV[0]}.out";
+
+
+#go through each line and test
+foreach (@lines){
+    #replace fred with garbage
+    #replace wilma with fred
+    #replace garbage with wilma
+    s/fred/83h88/gi;
+    s/wilma/fred/gi;
+    s/83h88/wilma/gi;
+    print OUT $_, "\n";
+}

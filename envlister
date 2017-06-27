@@ -1,0 +1,18 @@
+#maxwell sanders
+#6/28/17
+#This lists all of the contents in the ENV hash
+
+#put everything into a nice list structure
+while( ($key, $value) = each %ENV){
+    $value = $value // "(undefined value)";
+    $line = "$key $value\n";
+    push @lines, $line;
+}
+
+#sort them all
+sort @lines;
+
+#print them all
+foreach (@lines){
+    print $_ ;
+}

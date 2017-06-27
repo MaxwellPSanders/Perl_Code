@@ -1,0 +1,19 @@
+#maxwell sanders
+#6/26/17
+#takes the word in $what and finds if it is located 3 times in a row
+
+
+#open the test file, grab everything and close it
+open TEST, "regtest.txt";
+chomp(@lines = <TEST>);
+close TEST;
+
+$word = 'fred|farmer';
+
+#go through each line and test
+foreach (@lines){
+    #check to find fred
+    if(/($word){3}/){
+        print $_, "\n";
+    }
+}

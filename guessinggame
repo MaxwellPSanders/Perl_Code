@@ -1,0 +1,26 @@
+#maxwell sanders
+#6/26/17
+#this is a guessing game
+
+#get the number
+$magic = int(1 + rand 100);
+
+#keep going until they quit or win
+while(true){
+    print "Type in a number in the range 1-100: ";
+    chomp($guess = <STDIN>);
+    if($guess == undef){
+        print "Didn't type input, quitting...\n";
+	exit();
+    }
+    elsif($guess < $magic){
+	print "That number is too low\n";
+    }
+    elsif($guess > $magic){
+	print "That number is too high\n";
+    }
+    elsif($guess == $magic){
+	print "YOU NAILED IT!!!!\n";
+	exit();
+    }
+}

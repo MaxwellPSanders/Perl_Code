@@ -1,0 +1,19 @@
+#maxwell sanders
+#6/26/17
+#This is program changes every instance of fred with larry
+
+#open the test file, grab everything and close it
+open TEST, $ARGV[0];
+chomp(@lines = <TEST>);
+close TEST;
+
+#open the outputfile
+open OUT, ">", "${ARGV[0]}.out";
+
+
+#go through each line and test
+foreach (@lines){
+    #check to find fred
+    s/fred/Larry/gi;
+    print OUT $_, "\n";
+}

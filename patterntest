@@ -1,0 +1,14 @@
+#maxwell sanders
+#6/24/17
+#copied from OReilly Llama book
+#this is a template for a pattern match
+
+while(<>){
+    chomp;
+    if(/\b(?<word>\w*a)\b/){
+        print "Matched: |$`<$&>$'|$+{word}\n";
+    }
+    else{
+        print "No match: |$_|\n";
+    }
+}
