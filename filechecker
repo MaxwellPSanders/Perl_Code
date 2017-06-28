@@ -1,0 +1,21 @@
+#Maxwell Sanders
+#6/28/17
+#This file takes all of the files put onto the command line and displays
+#whether they are
+#existent, readable, writable, executable
+
+use 5.010;
+
+foreach (@ARGV){
+    #runs it through tester
+    if(!(-e)){
+        print "$_ doesn't exist!\n";
+        next();
+    }
+    print "$_ exists";
+    
+    when(-r){ print ", is readable"; continue;}
+    when(-w){ print ", is writeable"; continue;}
+    when(-x){ print ", is executeable"; continue;}   
+    default{print "\n";}
+}
