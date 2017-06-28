@@ -13,6 +13,6 @@ else{
 #read everything in the directory
 sort(@lines = glob "*");
 foreach (@lines){
-    next if $_ =~ "/^\./";
+    #next if $_ =~ "/^\./";
     print "$_\n";
 }

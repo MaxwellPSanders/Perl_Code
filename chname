@@ -1,0 +1,5 @@
+#Maxwell Sanders
+#6/27/17
+#This program changes the mame of the specified program
+
+rename $ARGV[0], $ARGV[1];
