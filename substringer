@@ -1,0 +1,45 @@
+#maxwell sanders
+#6/27/17
+#This program finds all of the occurrences of a substring in a string
+
+#make a cheeky substringfinder subroutine
+sub stringfinder{
+    my $ind; #this is used to keep track of where we are in the string
+    my @indices; #this will be used to hold the indices
+    while($ind + length($_[1]) < length($_[0]) - 1){
+        $ind =  index($_[0], $_[1], $ind);
+        #check to see if it found a match
+        if($ind != -1){        
+            push @indices, $ind;
+            $ind ++;
+            next;
+        }
+        return @indices;
+    }
+    return @indices;
+}
+
+#keep looping eternally
+while(true){
+    #take user input
+    print "Enter the string you would like to search: ";
+    chomp($str = <STDIN>);
+    print "Enter what you would like to search for: ";
+    chomp($search = <STDIN>);
+
+    #get the indices
+    @indices = &stringfinder($str, $search);
+
+    if(!@indices){
+        print "Nothing found\n\n";
+        next;
+    }
+    
+    #print them out
+    print "The substring is located at: ";
+    foreach (@indices){
+        print "$_ ";
+    }
+    print "\n\n";
+
+}
