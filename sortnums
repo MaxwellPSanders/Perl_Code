@@ -1,0 +1,12 @@
+#Maxwell Sanders
+#6/28/17
+#this sorts lists by number and prints them in a right justified column
+
+#grab all the numbers and sort them
+open NUMS, "numbers.txt";
+@numbers = sort { $a <=> $b } split(/ /, <NUMS>);
+
+#go through and print each number
+foreach (@numbers){
+    printf "%10d\n", $_;
+}

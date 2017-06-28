@@ -1,0 +1,18 @@
+#Maxwell Sanders
+#6/27/17
+#This program sorts name by last name and then by first name
+
+#hash full of names
+%last_names = qw{ fred Flintstone WILMA flinTStone Barney Rubble
+betty rubble Bamm-Bamm RubBLE PEBBLES FLINSTONE};
+
+@sorted_keys = sort {
+    "\L$last_names{$a}" cmp "\L$last_names{$b}"
+	or
+    "\L$a" cmp "\L$b"
+} %last_names;
+
+#sort all the names
+foreach (@sorted_keys){
+    print "$_ $last_names{$_}\n";
+}
