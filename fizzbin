@@ -1,0 +1,26 @@
+#Maxwell Sanders
+#6/27/17
+#This program checks the divisibility of input and by 3 5 7 and outputs
+#funny words to verify (Fizz Bin Sausage)
+
+use 5.010;
+
+#just keep going
+while(true){
+    #get user input
+    print "Enter a number: ";
+    chomp($number = <STDIN>);
+
+    if($number =~ /\D/){
+        print "Something other than a number entered!\n\n";
+        next;
+    }
+
+    #check through the given when
+    given ($number) {
+        when ($number % 3 == 0) { print "Fizz "; continue; }
+        when ($number % 5 == 0) { print "Bin "; continue; }
+        when ($number % 7 == 0) { print "Sausage "; continue; }
+        default { print "\n\n"; }
+    }
+}
