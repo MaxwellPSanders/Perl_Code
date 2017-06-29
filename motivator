@@ -1,0 +1,14 @@
+#Maxwell Sanders
+#6/29/17
+#This program figures out what day it is, and displays the proper motivation
+
+#get the day
+$date = 'date';
+
+#check it for saturday or sunday
+if(/(Sat|Sun)/){
+    print "Go Play!\n";
+}
+else{
+    print "Get back to work!\n";
+}
