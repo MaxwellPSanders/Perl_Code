@@ -1,0 +1,29 @@
+#Maxwell Sanders
+#6/28/17
+#this program reads a number and then returns all the divisors of that number
+
+use 5.010;
+
+#get user input
+print "Enter an integer: ";
+chomp($number = <STDIN>);
+if(! $number =~ /^\d+$/){
+    die "Didn't input an integer\n";
+}
+
+sub divisors{ 
+    my $number = shift;
+
+    my @divisors = ();
+    foreach my $divisor (2..($number/2)){
+        push @divisors, $divisor unless $number % $divisor;
+    }
+    return @divisors;
+}
+
+@stuff = &divisors($number);
+
+foreach (@stuff){
+    print "$_\n";
+}
+

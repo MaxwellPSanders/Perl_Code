@@ -1,0 +1,14 @@
+#Maxwell Sanders
+#6/29/17
+#This just goes through a file and says how many lines there are
+
+open FILE, $ARGV[0];
+print scalar (@lines = <FILE>), "\n";
+
+$count = 0;
+foreach (@lines){
+    if(/CSE/){
+        $count ++;
+    }
+}
+print "$count\n";

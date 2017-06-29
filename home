@@ -1,0 +1,8 @@
+#maxwell sanders
+#6/29/17
+#This program moves to the default directory dictated by cd and then ls -l
+
+open STDOUT, ">ls.out";
+open STDERR, ">ls.err";
+chdir;
+exec "ls -l";
