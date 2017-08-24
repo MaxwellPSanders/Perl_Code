@@ -1,0 +1,70 @@
+#!/usr/bin/perl
+#maxwell sanders
+#8/24/17
+#The purpose of this program is to make a txt file in the specified location
+#using the simple format of month_date.txt and opens vim
+
+#store the directory you want to put it in and then
+#store the date
+if(defined $ARGV[0]){
+	$direct = "$ARGV[0]";
+}
+else{
+	$direct = ".";
+}
+$date = `date`;
+
+#store the month and date by splitting
+my ($a, $mon, $day, $a, $a, $year) = split(m{ }, $date);
+
+#check to see the month and change it to a date form
+if($mon eq "Jan"){
+	$date = "01";
+}
+elsif($mon eq "Feb"){
+	$date = "02";
+}
+elsif($mon eq "Mar"){
+	$date = "03";
+}
+elsif($mon eq "Apr"){
+	$date = "04";
+}
+elsif($mon eq "May"){
+	$date = "05";
+}
+elsif($mon eq "Jun"){
+	$date = "06";
+}
+elsif($mon eq "Jul"){
+	$date = "07";
+}
+elsif($mon eq "Aug"){
+	$date = "08";
+}
+elsif($mon eq "Sep"){
+	$date = "09";
+}
+elsif($mon eq "Oct"){
+	$date = "10";
+}
+elsif($mon eq "Nov"){
+	$date = "11";
+}
+elsif($mon eq "Dec"){
+	$date = "12";
+}
+
+#create the text file
+chomp($year);
+$date = "${year}_${date}_$day.txt";
+$full = "$direct/$date";
+
+#check if it is plaintext
+if(!(-f $full)){
+	print "$full is not a plaintext file! Aborting operation.\n";
+	exit;
+}
+
+#open vim using that $filename
+system("vim","$full");

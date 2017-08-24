@@ -1,0 +1,29 @@
+#Maxwell Sanders
+#6/30/17
+#This program reads from a list of strings and then stores them
+#Then it prompts the user for what to find
+
+#open and store the file
+open FILE, "regtest.txt";
+chomp(@lines = <FILE>);
+
+#just keep this going forever
+while(true){
+    #get the pattern and store it
+    print "What pattern would you like to match: ";
+    chomp($patt = <STDIN>);
+    
+    #look through all the lines
+    $count = 0;
+    foreach (@lines){
+        #evaluate it first
+	eval{
+	    if(/$patt/){
+	        $count ++;
+		print "$_\n";	
+	    }
+	};
+    }
+    print "$count matches found.\n";
+
+}
