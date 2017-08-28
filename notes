@@ -5,7 +5,7 @@
 #using the simple format of month_date.txt and opens vim
 
 #check if it is the creation flag
-if($ARGV[0] eq "-c"){
+if($ARGV[0] eq "-c" or $ARGV[0] eq "-l"){
 	#store the directory you want to put it in and then
 	#store the date
 	if(defined $ARGV[1]){
@@ -62,18 +62,57 @@ if($ARGV[0] eq "-c"){
 	$date = "${year}_${date}_$day.txt";
 	$full = "$direct/$date";
 
-	#check if it is exists and if so, is it plaintext
-	if(-e $full){
-		if(!(-f $full)){
-			print "$full is not a plaintext file! Aborting operation.\n";
+	#create or access current
+	#otherwise list the current plaintext files and give options in the directory
+	if($ARGV[0] eq "-c"){
+		#check if it is exists and if so, is it plaintext
+		if(-e $full){
+			if(!(-f $full)){
+				print "$full is not a plaintext file! Aborting operation.\n";
+				exit;
+			}
+		}
+	}
+	else{
+		#select which files
+		print "Choose what plaintext file you want to edit:\n";
+		print "============================================\n";
+		#get all the files into an array
+		@files = glob( $direct . '/*' );
+		$count = 1;
+		foreach(@files){
+			if(-f $_){
+				$_ = substr $_, 2;
+				print "$count. $_\n";
+				$count ++;
+			}
+		} 
+		print "$count. Today's file\n";
+		print "============================================\n";
+	
+		#grab user input
+		while(1){	
+			print "Your choice: ";
+			chomp($input = <STDIN>);
+			if($input le 0 or $input gt $count){
+				continue;
+			}
+			if($input eq $count){
+				system("vim","$full");
+			}
+			else{
+				$input --;
+				system("vim","$files[$input]"); 
+			}
 			exit;
 		}
 	}
+
 	#open vim using that $filename
 	system("vim","$full");
 	exit;
 }
 
 #user message
-print "Type 'notes -c directoryname' to create the notes file or access a current notes file.\n"
-
+print "Type 'notes -c directoryname' to create the notes file or access a current notes file.\n";
+print "Type 'notes -l directoryname' to list the plaintext files in the directory.\n";
