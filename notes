@@ -59,6 +59,7 @@ if($ARGV[0] eq "-c" or $ARGV[0] eq "-l"){
 
 	#create the text file
 	chomp($year);
+	$day = sprintf "%02d", $day;
 	$date = "${year}_${date}_$day.txt";
 	$full = "$direct/$date";
 
