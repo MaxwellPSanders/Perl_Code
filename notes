@@ -17,7 +17,7 @@ if($ARGV[0] eq "-c" or $ARGV[0] eq "-l"){
 	$date = `date`;
 
 	#store the month and date by splitting
-	my ($a, $mon, $day, $a, $a, $year) = split(m{ }, $date);
+	my ($a, $mon, $day, $a, $a, $year) = split(m{ +}, $date);
 
 	#check to see the month and change it to a date form
 	if($mon eq "Jan"){
