@@ -95,17 +95,15 @@ if($ARGV[0] eq "-c" or $ARGV[0] eq "-l"){
 		while(1){	
 			print "Your choice: ";
 			chomp($input = <STDIN>);
-			if($input le 0 or $input gt $count){
-				continue;
-			}
 			if($input eq $count){
 				system("vim","$full");
+				exit;
 			}
 			else{
 				$input --;
 				system("vim","$files[$input]"); 
+				exit;
 			}
-			exit;
 		}
 	}
 
